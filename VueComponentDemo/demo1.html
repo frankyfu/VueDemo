@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="demo1.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+
+
+
+
+<!--组建基础-->
+<div id="app1">
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+</div>
+<script src="demo1.js"></script>
+
+
+
+
+<!--局部注册-->
+<div id="app2">
+    <my-weather></my-weather>
+</div>
+<script src="demo2.js"></script>
+
+
+
+
+<!--表行组件-->
+<div id="app3">
+    <h3>2019.7.6</h3>
+    <table border="1">
+        <tr>
+            <td>No.</td>
+            <td>todo</td>
+        </tr>
+        <tr is="todo1"></tr>
+        <tr is="todo2"></tr>
+        <tr is="todo3"></tr>
+    </table>
+</div>
+<script src="demo3.js"></script>
+
+
+
+
+<!--props demo-->
+<div id="app4">
+    <div>today's weather is:<today-weather></today-weather></div>
+</div>
+<script src="demo4.js"></script>
+
+<!--数据传递-->
+<br>
+<div id="app5">
+    <div>scores level</div>
+    <test-result :score="50"></test-result>
+    <test-result :score="80"></test-result>
+    <test-result :score="100"></test-result>
+</div>
+<script src="demo5.js"></script>
+
+
+
+<!--传递变量-->
+<br>
+<div id="app6">
+    <div>pleas input your name:<input v-model="name"></div>
+    <hr/>
+    <say-hello :pname="name"/>
+</div>
+<script src="demo6.js"></script>
+
+
+
+<!--参数验证-->
+<br>
+<div id="app7">
+    <div>your information:</div>
+    <show-information name="frank" :age="25" :detail="{address:'guangdong', language:'Chinese'}"></show-information>
+</div>
+<script src="demo7.js"></script>
+
+
+
+<!--事件发射$emit理解-->
+<br>
+<div id="app8">
+    <h1>calculator</h1>
+    <add-method :a="6" :b="12" v-on:add_event="getAddResult"></add-method>
+    <hr/>
+    <h3>{{result}}</h3>
+</div>
+<script src="demo8.js"></script>
+
+
+
+<!--插槽-->
+<div id="app9">
+    <nba-all-star c="Yao" pf="James">
+        <span slot="sf">Durant</span>
+        <span slot="sg">Harden</span>
+        <span slot="pg">Curry</span>
+    </nba-all-star>
+</div>
+<script src="demo9.js"></script>
+
+
+
+</body>
+</html>
